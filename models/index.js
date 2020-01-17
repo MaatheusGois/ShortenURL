@@ -14,10 +14,7 @@ const options = {
   useUnifiedTopology: true
 };
 
-const userDB = process.env.userDB
-const passwordDB = process.env.passwordDB
-
-const urlDataBase = `mongodb://${userDB}:${passwordDB}@ds263928.mlab.com:63928/br-micro-service-dns` // Set your Data Base URL here
+const urlDataBase = process.env.urlDataBase // Set your Data Base URL here
 //Production
 mongoose.connect(urlDataBase, options)
 
