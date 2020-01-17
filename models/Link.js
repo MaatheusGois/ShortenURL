@@ -8,7 +8,8 @@ const Link = new Schema({
         unique: true
     },
     url: String,
-    clicks: String,
+    clicks: Number,
+    data: String
 })
 
 mongoose.model('Link', Link)
