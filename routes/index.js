@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const Link = mongoose.model('Link')
+const JSON = require('circular-json');
 
 
 router.get('/:dns', async (req, res, next) => {
@@ -16,7 +17,13 @@ router.get('/:dns', async (req, res, next) => {
     } else {
       link.clicks = 1 
     }
-    link.data = JSON.stringify(req)
+    if(link.data) {
+      (link.data).push(JSON.stringify(req))
+    } else {
+      link.data = JSON.stringify(req)
+    }
+    
+    // link.data = req
     await link.save()
 
     let url = link.url
