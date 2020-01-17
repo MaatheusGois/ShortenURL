@@ -20,7 +20,8 @@ router.get('/dns/create', jwt, async (req, res, next) => {
 router.post('/dns/create', jwt, async (req, res, next) => {
     try {
         await Link.create(req.body)
-        res.render('admin/dashboard', {success: 'Criado com sucesso!'})
+        const links = await Link.find()
+        res.render('admin/dns-list', { links, success: 'Criado com sucesso!' })
     } catch (error) {
         next(error)
     }
@@ -43,7 +44,7 @@ router.get('/dns/delete/:id', jwt, async (req, res, next) => {
     try {
         await Link.findByIdAndRemove(req.params.id)
         let links = await Link.find()
-        res.render('admin/dns-list', { success: 'Removido com sucesso!', links})
+        res.render('admin/dns-list', { success: 'Removido com sucesso!', links })
     } catch (error) {
         next(error)
     }
