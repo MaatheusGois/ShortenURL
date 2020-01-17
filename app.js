@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', loginRouter)
 app.use('/user', userRouter)
-app.use('/index', indexRouter)
+app.use('/go', indexRouter)
 
 const adminRouter = express.Router()
 adminRouter.use(dnsRouter)
