@@ -1,0 +1,20 @@
+<h2 class="bebas">Cadastrar DNS</h2>
+
+
+<form action="{{#if link}}/admin/dns/editar/{{link.id}}{{else}}/admin/dns/create{{/if}}" method="post">
+    <card>
+        <blockquote>
+            <grid>
+                <div col="1/2">
+                    <label for="dns">DNS</label>
+                    <input type="text" name="dns" id="dns" value="{{link.dns}}" required>
+                </div>
+                <div col="1/2">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="url" value="{{link.url}}" required>
+                </div>
+            </grid>
+            <button btn type="submit">{{#if link}}Atualizar{{else}}Criar{{/if}} DNS</button>
+        </blockquote>
+    </card>
+</form>

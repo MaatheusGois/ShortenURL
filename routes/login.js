@@ -32,11 +32,7 @@ router.post('/', async (req, res, next) => {
         user: req.body.user
     })
     try {
-        
-        console.log(user.checkPassword(req.body.password));
-        
         if (user && user.checkPassword(req.body.password)) {
-            console.log(user);
             const id = user.id
             var token = jsonwebtoken.sign({
                 id

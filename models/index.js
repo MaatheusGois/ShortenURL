@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 require('./User')
+require('./Link')
 
 
 const options = {
