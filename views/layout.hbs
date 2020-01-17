@@ -3,8 +3,25 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/bare.min.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+  {{> nav}}
+  <section style="max-width: auto">
+    <br>
+    {{#if msg}}
+    <card>
+      <p txt="c" style="background-color: #4cfa5b">{{msg}}</p>
+    </card>
+    {{/if}}
+    {{#if err}}
+    <card>
+      <p txt="c" style="background-color: #f00">{{err}}</p>
+    </card>
+    {{/if}}
+    <br>
     {{{body}}}
-  </body>
+  </section>
+  {{> footer}}
+</body>
 </html>

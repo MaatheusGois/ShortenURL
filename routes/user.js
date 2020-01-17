@@ -2,14 +2,13 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const User = mongoose.model('User')
-const jwt = require('../auth/middleware')
+const jwt = require('./auth/middleware')
 
 
-//CREATE
 router.post('/', jwt, async (req, res, next) => {
     try {
         let user = new User(req.body)
-        user.senha = user.hashPassword(user.senha)
+        user.password = user.hashPassword(user.password)
         await user.save()
         res.json(user)
     } catch (err) {
@@ -17,7 +16,6 @@ router.post('/', jwt, async (req, res, next) => {
     }
 })
 
-// READ
 router.get('/', jwt, async (req, res, next) => {
     try {
         let users = await User.find({})
@@ -27,14 +25,13 @@ router.get('/', jwt, async (req, res, next) => {
     }
 })
 
-//UPDATE
 router.put('/', jwt, async (req, res, next) => {
     try {
         let user = await User.findOne({
             user: req.body.user
         })
         if (user){
-            user.senha = user.hashPassword(user.senha)
+            user.password = user.hashPassword(user.password)
             await user.save()
             res.json(user)
         } else {
@@ -46,7 +43,6 @@ router.put('/', jwt, async (req, res, next) => {
     }
 })
 
-//DELETE
 router.delete('/', jwt, async (req, res, next) => {
     try {
         let user = await User.deleteMany({})
@@ -55,5 +51,25 @@ router.delete('/', jwt, async (req, res, next) => {
         next(err)
     }
 })
+
+async function createAdmin() {
+    let user = await User.findOne({
+        user: 'admin'
+    })
+    if(!user) {
+        let body = {
+            user: 'admin',
+            password: 'admin123!@#'
+        }
+
+        let user = new User(body)
+        user.password = user.hashPassword(user.password)
+        await user.save()
+        console.log('admin criado com sucesso!');
+    } else {
+        console.log('admin já existe!');
+    }
+}
+createAdmin()
 
 module.exports = router

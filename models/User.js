@@ -19,7 +19,6 @@ User.methods.checkPassword = function (password) {
 }
 
 User.methods.hashPassword = function (password) {
-    //TODO Melhorar hash 
     return md5(password)
 }
 
