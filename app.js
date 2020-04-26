@@ -4,6 +4,8 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const hbs = require('hbs')
+const swaggerUI = require('swagger-ui-express')
+const {swaggerDocument} = require('./swagger')
 require('dotenv-safe').config({
   allowEmptyValues: true
 });
@@ -33,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', loginRouter)
 app.use('/user', userRouter)
 app.use('/go', indexRouter)
+app.use('/api-docs/v1/', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 const adminRouter = express.Router()
 adminRouter.use(dnsRouter)

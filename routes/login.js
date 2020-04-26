@@ -10,6 +10,8 @@ const Link = mongoose.model('Link')
 
 router.get('/', async (req, res, next) => {
     try {
+        console.log(req)
+        
         if (req.cookies) {
             let isValid = await token(req.cookies.auth)
             if (isValid) {
