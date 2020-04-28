@@ -11,12 +11,12 @@ require('dotenv-safe').config({
 });
 
 
-require('./models/index')
+require('./model/index')
 
-const indexRouter = require('./routes/index')
-const loginRouter = require('./routes/login')
-const userRouter = require('./routes/user')
-const dnsRouter = require('./routes/admin/dns')
+const indexRouter = require('./route/index')
+const loginRouter = require('./route/login')
+const userRouter = require('./route/user')
+const dnsRouter = require('./route/admin/dns')
 
 const app = express()
 
