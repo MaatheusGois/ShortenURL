@@ -31,7 +31,6 @@ router.get('/', async (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
-
     let user = await User.findOne({
         user: req.body.user
     })

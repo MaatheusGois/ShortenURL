@@ -17,6 +17,7 @@ const indexRouter = require('./route/index')
 const loginRouter = require('./route/login')
 const userRouter = require('./route/user')
 const dnsRouter = require('./route/admin/dns')
+const apiRouter = require('./route/API')
 
 const app = express()
 
@@ -35,7 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', loginRouter)
 app.use('/user', userRouter)
 app.use('/go', indexRouter)
-app.use('/api-docs/v1/', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+app.use('/api/v1', apiRouter)
+app.use('/api-docs/v1', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 const adminRouter = express.Router()
 adminRouter.use(dnsRouter)

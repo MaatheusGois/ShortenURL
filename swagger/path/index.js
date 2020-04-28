@@ -1,5 +1,5 @@
-const {getAll} = require('./getAll.swagger')
+const {readAll} = require('./readAll.swagger')
 
 module.exports = {
-    getAll
+    readAll
 }

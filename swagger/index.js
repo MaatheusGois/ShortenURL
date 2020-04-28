@@ -1,5 +1,5 @@
 //https://levelup.gitconnected.com/the-simplest-way-to-add-swagger-to-a-node-js-project-c2a4aa895a3c
-const { getAll } = require("./path");
+const { readAll } = require("./path");
 
 const swaggerDocument = {
   openapi: "3.0.1",
@@ -44,8 +44,8 @@ const swaggerDocument = {
     },
   ],
   paths: {
-    "/all": {
-      get: getAll,
+    "/readAll": {
+      get: readAll,
     },
   },
 };
