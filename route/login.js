@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
             let isValid = await token(req.cookies.auth)
             if (isValid) {
                 const links = await Shorten.find()
-                res.render('admin/dns-list', { links })
+                res.render('admin/shorten-list', { links })
             } else {
                 res.render('login', {noAuth: true})
             }
@@ -44,7 +44,7 @@ router.post('/', async (req, res, next) => {
             })
             res.cookie('auth', token)
             const links = await Shorten.find()
-            res.render('admin/dns-list', { links })
+            res.render('admin/shorten-list', { links })
         } else {
             throw Error('Login inválido!')
         }

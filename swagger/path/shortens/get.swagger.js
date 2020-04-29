@@ -27,7 +27,7 @@ const readAll = {
                       type: "string",
                       description: "Object id",
                     },
-                    dns: {
+                    shorten: {
                       type: "string",
                       description: "Shorten name",
                     },

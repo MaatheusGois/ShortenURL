@@ -5,9 +5,9 @@ const Shorten = mongoose.model('Shorten')
 const JSON = require('circular-json');
 
 
-router.get('/:dns', async (req, res, next) => {
+router.get('/:shorten', async (req, res, next) => {
   try {
-    const link = await Shorten.findOne({ dns: req.params.dns })
+    const link = await Shorten.findOne({ shorten: req.params.shorten })
 
     if (!link) throw Error('Shorten Not Found!')
 

@@ -1,13 +1,13 @@
 <h2 class="bebas">Cadastrar Shorten</h2>
 
 
-<form action="{{#if link}}/admin/dns/editar/{{link.id}}{{else}}/admin/dns/create{{/if}}" method="post">
+<form action="{{#if link}}/admin/shorten/editar/{{link.id}}{{else}}/admin/shorten/create{{/if}}" method="post">
     <card>
         <blockquote>
             <grid>
                 <div col="1/2">
-                    <label for="dns">DNS</label>
-                    <input type="text" name="dns" id="dns" value="{{link.dns}}" required>
+                    <label for="shorten">DNS</label>
+                    <input type="text" name="shorten" id="shorten" value="{{link.shorten}}" required>
                 </div>
                 <div col="1/2">
                     <label for="url">URL</label>

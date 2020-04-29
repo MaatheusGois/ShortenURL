@@ -37,7 +37,7 @@ const create = {
                         type: "string",
                         description: "Object id",
                       },
-                      dns: {
+                      shorten: {
                         type: "string",
                         description: "Shorten name",
                       },

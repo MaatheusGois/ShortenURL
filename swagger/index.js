@@ -12,7 +12,7 @@ const swaggerDocument = {
     contact: {
       name: "Matheus Gois de Lima Silva",
       email: "matheusgoislimasilva@gmail.com",
-      url: "http://br-micro-service-dns.herokuapp.com",
+      url: "http://br-micro-service-shorten.herokuapp.com",
     },
     license: {
       name: "Apache 2.0",
@@ -25,7 +25,7 @@ const swaggerDocument = {
       description: "Local server",
     },
     {
-      url: "http://br-micro-service-dns.herokuapp.com/api/v1",
+      url: "http://br-micro-service-shorten.herokuapp.com/api/v1",
       description: "DEV Env",
     },
   ],
@@ -55,7 +55,7 @@ const swaggerDocument = {
   },
   definitions: {
     Shorten: {
-      required: ["email", "_id"],
+      required: ["shorten"],
       properties: {
         _id: {
           type: "string",

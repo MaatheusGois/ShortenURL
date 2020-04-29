@@ -16,7 +16,7 @@ require('./model/index')
 const indexRouter = require('./route/index')
 const loginRouter = require('./route/login')
 const userRouter = require('./route/user')
-const dnsRouter = require('./route/admin/dns')
+const dnsRouter = require('./route/admin/shorten')
 const apiRouter = require('./route/API')
 
 const app = express()

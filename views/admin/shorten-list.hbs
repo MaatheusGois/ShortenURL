@@ -1,6 +1,6 @@
 <h1 class="bebas em4">Lista de Links</h1>
 
-<button btn onclick="location.href='/admin/dns/create'">Cadastrar Shorten</button>
+<button btn onclick="location.href='/admin/shorten/create'">Cadastrar Shorten</button>
 
 
 <section txt="c">
@@ -18,14 +18,14 @@
             <tbody>
                 {{#each links}}
                 <tr>
-                    <td>{{this.dns}}</td>
+                    <td>{{this.shorten}}</td>
                     <td>{{this.url}}</td>
                     <td>{{#if this.clicks}}{{this.clicks}}{{else}}0{{/if}}</td>
                     <td txt="c">
-                        <a href="/admin/dns/editar/{{this.id}}" class="text-primary"><i class="fa fa-edit"> Editar</i></a>
+                        <a href="/admin/shorten/editar/{{this.id}}" class="text-primary"><i class="fa fa-edit"> Editar</i></a>
                     </td>
                     <td txt="c">
-                        <a href="/admin/dns/delete/{{this.id}}" class="text-danger"><i class="fa fa-trash"> Deletar</i></a>
+                        <a href="/admin/shorten/delete/{{this.id}}" class="text-danger"><i class="fa fa-trash"> Deletar</i></a>
                     </td>
                 </tr>
                 {{/each}}
