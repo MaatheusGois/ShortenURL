@@ -1,6 +1,7 @@
 const readAll = {
   tags: ["ShortenURL"],
-  description: "Returns all shortens",
+  summary: "Returns all shortens",
+  description: "",
   operationId: "readAll",
   security: [
     {

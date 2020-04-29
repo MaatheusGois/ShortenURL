@@ -1,6 +1,7 @@
 const put = {
   tags: ["ShortenURL"],
-  description: "Uptade the shortened",
+  summary: "Uptade the shortened",
+  description: "",
   operationId: "putShortenById",
   consumes: ["application/json"],
   produces: ["application/json"],

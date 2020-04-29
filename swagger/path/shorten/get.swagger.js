@@ -9,7 +9,7 @@ const readByID = {
     },
   ],
   tags: ["ShortenURL"],
-  description: "Return shorten",
+  summary: "Return shorten",
   operationId: "getShortenById",
   security: [
     {
