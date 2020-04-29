@@ -1,5 +1,6 @@
 <h1 align="center">Welcome to shorten-url 👋</h1>
 <p>
+  <img alt="Unit test" src="https://github.com/MaatheusGois/ShortenURL/workflows/Node.js%20CI/badge.svg"></img>
   <a href="https://www.npmjs.com/package/shorten-url" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/shorten-url.svg">
   </a>
