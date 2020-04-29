@@ -23,5 +23,19 @@
     "mongoose": "^5.8.7",
     "morgan": "~1.9.1",
     "swagger-ui-express": "^4.1.4"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaatheusGois/MicroService-DNS.git"
+  },
+  "keywords": [],
+  "author": "Matheus Gois <matheusgoislimasilva@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaatheusGois/MicroService-DNS/issues"
+  },
+  "homepage": "https://github.com/MaatheusGois/MicroService-DNS#readme",
+  "description": "<h1 align=\"center\">Welcome to shorten-url 👋</h1> <p>   <a href=\"https://www.npmjs.com/package/shorten-url\" target=\"_blank\">     <img alt=\"Version\" src=\"https://img.shields.io/npm/v/shorten-url.svg\">   </a>   <a href=\"https://br-micro-service-shorten.herokuapp.com/api/docs/v1/\" target=\"_blank\">     <img alt=\"Documentation\" src=\"https://img.shields.io/badge/documentation-yes-brightgreen.svg\" />   </a>   <a href=\"https://github.com/MaatheusGois/MicroService-DNS/graphs/commit-activity\" target=\"_blank\">     <img alt=\"Maintenance\" src=\"https://img.shields.io/badge/Maintained%3F-yes-green.svg\" />   </a>   <a href=\"https://github.com/MaatheusGois/MicroService-DNS/blob/master/LICENSE\" target=\"_blank\">     <img alt=\"License: MIT\" src=\"https://img.shields.io/github/license/MaatheusGois/shorten-url\" />   </a> </p>"
 }
