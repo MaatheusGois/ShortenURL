@@ -37,7 +37,7 @@ app.use('/', loginRouter)
 app.use('/user', userRouter)
 app.use('/go', indexRouter)
 app.use('/api/v1', apiRouter)
-app.use('/api-docs/v1', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+app.use('/api/docs/v1', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 const adminRouter = express.Router()
 adminRouter.use(dnsRouter)

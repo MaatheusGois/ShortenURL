@@ -1,5 +1,7 @@
 const {readAll} = require('./readAll.swagger')
+const {readByID} = require('./readByID.swagger')
 
 module.exports = {
-    readAll
+    readAll,
+    readByID
 }

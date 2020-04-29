@@ -5,7 +5,7 @@ const Link = mongoose.model('Link')
 // const jwt = require('../auth/middleware')
 
 // Create
-router.post('/create', async (req, res, next) => {
+router.post('/shortens', async (req, res, next) => {
     try {
         res.json({
             success: true,
@@ -20,7 +20,7 @@ router.post('/create', async (req, res, next) => {
 })
 
 // Read
-router.get('/readAll', async (req, res, next) => {
+router.get('/shortens', async (req, res, next) => {
     try {
         res.json({
             success: true,
@@ -34,12 +34,12 @@ router.get('/readAll', async (req, res, next) => {
     }
 })
 
-// Read ne
-router.get('/read/:id', async (req, res, next) => {
+// Read by
+router.get('/shorten', async (req, res, next) => {
     try {
         res.json({
             success: true,
-            content: await Link.findById(req.params.id)
+            content: await Link.findById(req.query.id)
         })
     } catch (error) {
         res.json({
@@ -50,11 +50,11 @@ router.get('/read/:id', async (req, res, next) => {
 })
 
 // Update
-router.post('/update/:id', async (req, res, next) => {
+router.put('/shorten', async (req, res, next) => {
     try {
         res.json({
             success: true,
-            content: await Link.findByIdAndUpdate(req.params.id, req.body)
+            content: await Link.findByIdAndUpdate(req.query.id, req.body)
         })
     } catch (error) {
         res.json({
@@ -65,11 +65,11 @@ router.post('/update/:id', async (req, res, next) => {
 })
 
 // Delete
-router.get('/delete/:id', async (req, res, next) => {
+router.delete('/shorten', async (req, res, next) => {
     try {
         res.json({
             success: true,
-            content: await Link.findByIdAndRemove(req.params.id)
+            content: await Link.findByIdAndRemove(req.query.id)
         })
     } catch (error) {
         res.json({

@@ -13,31 +13,40 @@ const readAll = {
       content: {
         "application/json": {
           schema: {
-            type: "array",
-            items: {
-              properties: {
-                _id:  {
-                  type: "string",
-                  description: "Object id"
+            type: "object",
+            properties: {
+              succcess: {
+                type: "boolean",
+                description: "s",
+              },
+              content: {
+                type: "array",
+                items: {
+                  properties: {
+                    _id: {
+                      type: "string",
+                      description: "Object id",
+                    },
+                    dns: {
+                      type: "string",
+                      description: "Shorten name",
+                    },
+                    url: {
+                      type: "string",
+                      description: "Full url shortened",
+                    },
+                    clicks: {
+                      type: "integer",
+                      description: "Number of clicks in the shorten url",
+                    },
+                    data: {
+                      type: "array",
+                      items: {
+                        type: "string",
+                      },
+                    },
+                  },
                 },
-                dns: {
-                  type: "string",
-                  description: "Shorten name",
-                },
-                url: {
-                  type: "string",
-                  description: "Full url shortened",
-                },
-                clicks: {
-                  type: "integer",
-                  description: "Number of clicks in the shorten url"
-                },
-                data: {
-                  type: "array",
-                  items: {
-                    type: "string"
-                  }
-                }
               },
             },
           },
