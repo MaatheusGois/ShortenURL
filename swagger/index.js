@@ -6,12 +6,11 @@ const swaggerDocument = {
   info: {
     version: "1.0.0",
     title: "APIs DNS",
-    description: "your description here",
+    description: "Project for learn more about REST",
     summary: "asd",
     termsOfService: "",
     contact: {
-      name: "Matheus Gois de Lima Silva",
-      email: "matheusgoislimasilva@gmail.com",
+      name: "Gregory Ramires & Matheus Gois",
       url: "http://br-micro-service-shorten.herokuapp.com",
     },
     license: {
