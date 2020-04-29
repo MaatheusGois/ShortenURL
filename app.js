@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const logger = require('morgan')
 const hbs = require('hbs')
 const swaggerUI = require('swagger-ui-express')
+const cors = require('cors')
 const {swaggerDocument} = require('./swagger')
 require('dotenv-safe').config({
   allowEmptyValues: true
@@ -28,6 +29,7 @@ app.set('views', path.join(__dirname, 'views'))
 hbs.registerPartials(path.join(__dirname, '/views/partials'))
 app.set('view engine', 'hbs')
 
+app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(express.json())
