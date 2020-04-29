@@ -4,12 +4,12 @@ const readByID = {
       name: "id",
       in: "query",
       required: true,
-      description: "ID of user that we want to find",
+      description: "ID of shorten that we want",
       type: "string",
     },
   ],
   tags: ["ShortenURL"],
-  description: "Returns all shortens",
+  description: "Return shorten",
   operationId: "getShortenById",
   security: [
     {
@@ -22,40 +22,7 @@ const readByID = {
       content: {
         "application/json": {
           schema: {
-            type: "object",
-            properties: {
-              success: {
-                type: "boolean",
-                description: "confirm if is result is true or not",
-              },
-              content: {
-                type: "object",
-                properties: {
-                  _id: {
-                    type: "string",
-                    description: "Object id",
-                  },
-                  shorten: {
-                    type: "string",
-                    description: "Shorten name",
-                  },
-                  url: {
-                    type: "string",
-                    description: "Full url shortened",
-                  },
-                  clicks: {
-                    type: "integer",
-                    description: "Number of clicks in the shorten url",
-                  },
-                  data: {
-                    type: "array",
-                    items: {
-                      type: "string",
-                    },
-                  },
-                },
-              },
-            },
+            $ref: "#/definitions/AnswerOne"
           },
         },
       },

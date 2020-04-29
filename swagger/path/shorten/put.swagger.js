@@ -1,10 +1,19 @@
-const create = {
+const put = {
   tags: ["ShortenURL"],
-  summary: "Create a shorten url",
-  description: "",
-  operationId: "createShorten",
+  description: "Uptade the shortened",
+  operationId: "putShortenById",
   consumes: ["application/json"],
   produces: ["application/json"],
+
+  parameters: [
+    {
+      name: "id",
+      in: "query",
+      required: true,
+      description: "ID of user that we want to find",
+      type: "string",
+    }
+  ],
   requestBody: {
     description: "Shorten with new values of properties",
     required: true,
@@ -16,25 +25,25 @@ const create = {
       },
     },
   },
-  responses: {
-    "200": {
-      description: "Return the Shorten created",
-      content: {
-        "application/json": {
-          schema: {
-            $ref: "#/definitions/AnswerOne",
-          },
-        },
-      },
-    },
-  },
   security: [
     {
       bearerAuth: [],
     },
   ],
+  responses: {
+    "200": {
+      description: "Put one Shorten",
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/definitions/AnswerOne"
+          },
+        },
+      },
+    },
+  },
 };
 
 module.exports = {
-  create,
+  put,
 };

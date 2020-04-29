@@ -12,7 +12,8 @@ const options = {
   socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
   family: 4,
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 };
 
 const urlDataBase = process.env.urlDataBase // Set your Data Base URL here
