@@ -1,4 +1,4 @@
-<h2 class="bebas">Cadastrar Link</h2>
+<h2 class="bebas">Cadastrar Shorten</h2>
 
 
 <form action="{{#if link}}/admin/dns/editar/{{link.id}}{{else}}/admin/dns/create{{/if}}" method="post">
@@ -14,7 +14,7 @@
                     <input type="text" name="url" id="url" value="{{link.url}}" required>
                 </div>
             </grid>
-            <button btn type="submit">{{#if link}}Atualizar{{else}}Criar{{/if}} Link</button>
+            <button btn type="submit">{{#if link}}Atualizar{{else}}Criar{{/if}} Shorten</button>
         </blockquote>
     </card>
 </form>

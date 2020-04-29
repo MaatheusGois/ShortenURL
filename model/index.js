@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 require('./User')
-require('./Link')
+require('./Shorten')
 
 
 const options = {

@@ -1,7 +1,9 @@
-const {readAll} = require('./readAll.swagger')
-const {readByID} = require('./readByID.swagger')
+const {readAll} = require('./shortens/get.swagger')
+const {create} = require('./shortens/post.swagger')
+const {readByID} = require('./shorten/get.swagger')
 
 module.exports = {
     readAll,
-    readByID
+    readByID,
+    create
 }

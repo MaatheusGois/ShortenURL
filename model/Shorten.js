@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Link = new Schema({
+const Shorten = new Schema({
     dns: {
         type: String,
         required: true,
@@ -12,4 +12,4 @@ const Link = new Schema({
     data: [String]
 })
 
-mongoose.model('Link', Link)
+mongoose.model('Shorten', Shorten)

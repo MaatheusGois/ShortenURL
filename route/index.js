@@ -1,15 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-const Link = mongoose.model('Link')
+const Shorten = mongoose.model('Shorten')
 const JSON = require('circular-json');
 
 
 router.get('/:dns', async (req, res, next) => {
   try {
-    const link = await Link.findOne({ dns: req.params.dns })
+    const link = await Shorten.findOne({ dns: req.params.dns })
 
-    if (!link) throw Error('Link Not Found!')
+    if (!link) throw Error('Shorten Not Found!')
 
     //Increments
     if(link.clicks) { 

@@ -5,7 +5,7 @@ const jwt = require('./auth/middleware')
 const token = require('./auth/token')
 const mongoose = require('mongoose')
 const User = mongoose.model('User')
-const Link = mongoose.model('Link')
+const Shorten = mongoose.model('Shorten')
 
 
 router.get('/', async (req, res, next) => {
@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
         if (req.cookies) {
             let isValid = await token(req.cookies.auth)
             if (isValid) {
-                const links = await Link.find()
+                const links = await Shorten.find()
                 res.render('admin/dns-list', { links })
             } else {
                 res.render('login', {noAuth: true})
@@ -43,7 +43,7 @@ router.post('/', async (req, res, next) => {
                 expiresIn: 3600 // expires in 1h
             })
             res.cookie('auth', token)
-            const links = await Link.find()
+            const links = await Shorten.find()
             res.render('admin/dns-list', { links })
         } else {
             throw Error('Login inválido!')
