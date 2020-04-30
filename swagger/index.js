@@ -141,10 +141,7 @@ const swaggerDocument = {
           type: "boolean",
         },
         content: {
-          type: "array",
-          items: {
-            $ref: "#/definitions/Shorten",
-          },
+          type: "string",
         },
       },
     },
