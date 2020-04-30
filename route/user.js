@@ -59,7 +59,7 @@ async function createAdmin() {
     if(!user) {
         let body = {
             user: 'admin',
-            password: 'admin123!@#'
+            password: '123'
         }
 
         let user = new User(body)

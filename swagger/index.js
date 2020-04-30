@@ -1,5 +1,5 @@
 //https://levelup.gitconnected.com/the-simplest-way-to-add-swagger-to-a-node-js-project-c2a4aa895a3c
-const { readAll, readByID, create, put } = require("./path");
+const { readAll, readByID, create, put, login } = require("./path");
 
 const swaggerDocument = {
   openapi: "3.0.1",
@@ -41,6 +41,7 @@ const swaggerDocument = {
   tags: [
     {
       name: "ShortenURL",
+      name: "User",
     },
   ],
   paths: {
@@ -53,6 +54,10 @@ const swaggerDocument = {
       post: create,
       get: readAll,
     },
+    "/user": {
+      post: login,
+      
+    }
   },
   definitions: {
     Shorten: {
@@ -104,6 +109,32 @@ const swaggerDocument = {
       },
     },
     AnswerAll: {
+      type: "object",
+      properties: {
+        success: {
+          type: "boolean",
+        },
+        content: {
+          type: "array",
+          items: {
+            $ref: "#/definitions/Shorten",
+          },
+        },
+      },
+    },
+    User: {
+      required: ["user", "password"],
+      properties: {
+        user: {
+          type: "string",
+          uniqueItems: true,
+        },
+        password: {
+          type: "string",
+        },
+      },
+    },
+    AnswerUser: {
       type: "object",
       properties: {
         success: {

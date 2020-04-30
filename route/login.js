@@ -10,8 +10,6 @@ const Shorten = mongoose.model('Shorten')
 
 router.get('/', async (req, res, next) => {
     try {
-        console.log(req)
-        
         if (req.cookies) {
             let isValid = await token(req.cookies.auth)
             if (isValid) {

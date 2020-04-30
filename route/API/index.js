@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const jsonwebtoken = require("jsonwebtoken");
 const Shorten = mongoose.model("Shorten");
-// const jwt = require('../auth/middleware')
+const User = mongoose.model("User");
+
+const jwt = require('../auth/middleware')
 
 // Create
 router.post("/shortens", async (req, res, next) => {
@@ -20,7 +23,7 @@ router.post("/shortens", async (req, res, next) => {
 });
 
 // Read
-router.get("/shortens", async (req, res, next) => {
+router.get("/shortens", jwt, async (req, res, next) => {
   try {
     res.json({
       success: true,
@@ -77,6 +80,41 @@ router.delete("/shorten", async (req, res, next) => {
     res.json({
       success: false,
       message: error.message,
+    });
+  }
+});
+
+// Login
+router.post("/user", async (req, res, next) => {
+  let user = await User.findOne({
+    user: req.body.user,
+  });
+  try {
+    if (user && user.checkPassword(req.body.password)) {
+      const id = user.id;
+      var token = jsonwebtoken.sign(
+        {
+          id,
+        },
+        process.env.SECRET,
+        {
+          expiresIn: 3600, // expires in 1h
+        }
+      );
+      res.json({
+        success: true,
+        constent: token,
+      });
+    } else {
+      res.json({
+        success: false,
+        constent: "Login inválido!",
+      });
+    }
+  } catch (error) {
+    res.json({
+      success: false,
+      constent: error.message,
     });
   }
 });
